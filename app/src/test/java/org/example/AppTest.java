@@ -24,7 +24,7 @@ public class AppTest {
     @Test
     public void testRejectBlankTask() {
         App todoList = new App();
-        todoList.add(""); // Attempt to add a blank task
+        todoList.add("");
         assertEquals(0, todoList.all().size(), "Blank task was added.");
     }
 
@@ -32,7 +32,7 @@ public class AppTest {
     public void testRejectDuplicateIncompleteTask() {
         App todoList = new App();
         todoList.add("Buy milk");
-        todoList.add("Buy milk"); // Attempt to add a duplicate incomplete task
+        todoList.add("Buy milk");
         assertEquals(1, todoList.all().size(), "Duplicate incomplete task was added.");
     }
 
@@ -40,8 +40,8 @@ public class AppTest {
     public void testAllowDuplicateCompleteTask() {
         App todoList = new App();
         todoList.add("Buy milk");
-        todoList.complete("Buy milk"); // Mark task as complete
-        todoList.add("Buy milk"); // Attempt to add a duplicate complete task
+        todoList.complete("Buy milk");
+        todoList.add("Buy milk");
         assertEquals(2, todoList.all().size(), "Duplicate complete task was not allowed.");
     }
 
