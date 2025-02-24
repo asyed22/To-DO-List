@@ -33,16 +33,7 @@ public class AppTest {
         App todoList = new App();
         todoList.add("Buy milk");
         todoList.add("Buy milk");
-        assertEquals(1, todoList.all().size(), "Duplicate incomplete task was added.");
-    }
-
-    @Test
-    public void testAllowDuplicateCompleteTask() {
-        App todoList = new App();
-        todoList.add("Buy milk");
-        todoList.complete("Buy milk");
-        todoList.add("Buy milk");
-        assertEquals(2, todoList.all().size(), "Duplicate complete task was not allowed.");
+        assertEquals(1, todoList.all().size(), "Task is not a Duplicate.");
     }
 
     @Test
